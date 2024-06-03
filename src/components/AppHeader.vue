@@ -119,7 +119,7 @@ export default {
       </div>
     </div>
   </div>
-  <div>
+  <div class=" bg-red">
     <img class="wave" :src="wave" alt="">
   </div>
 
@@ -204,11 +204,10 @@ h1 {
 }
 
 .wave {
-  transform: rotate(180deg);
   object-fit: cover;
   width: 100%;
   height: 3rem;
-  opacity: 0.2;
+  opacity: 1;
 }
 
 .jumbo {
