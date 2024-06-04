@@ -2,6 +2,7 @@
 <script>
 // COME IMPORTARE COMPONENTI IMPORT - NOME - FROM - PERCORSO
 import AppContent1 from './components/AppContent1.vue';
+import AppContent2 from './components/AppContent2.vue'
 import AppHeader from './components/AppHeader.vue';
 
 // SCRIPT
@@ -11,6 +12,7 @@ export default {
     // ESEMPIO DI INPORT COMPONENTE
     AppHeader,
     AppContent1,
+    AppContent2,
   },
   data() {
     return {
@@ -34,6 +36,7 @@ export default {
   <!-- TEMPLATE html-->
   <AppHeader />
   <AppContent1 />
+  <AppContent2 />
 </template>
 
 <style>

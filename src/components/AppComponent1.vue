@@ -41,7 +41,7 @@ export default {
       </div>
     </div>
     <!-- PARTE INFERIORE -->
-    <div class="d-flex align-items-center justify-content-end container">
+    <div class="d-flex align-items-center justify-content-end container mb-5">
       <div class="left d-flex justify-content-center">
         <img :src="arrayObject[active].icon" alt="">
       </div>
@@ -98,6 +98,7 @@ export default {
 
 .right {
   width: 50%;
+  height: 15rem;
 }
 
 .container {
