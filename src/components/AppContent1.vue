@@ -1,7 +1,12 @@
 <!-- COMPONENTE SINGOLO -->
 <script>
+import AppComponent1 from './AppComponent1.vue';
+
 // SCRIPT
 export default {
+  components: {
+    AppComponent1,
+  },
   data() {
     return {
       iconLibrary: 'img/Books-icon.png',
@@ -49,6 +54,9 @@ export default {
         to satisfy any student’s needs.</p>
     </div>
   </div>
+  <!-- App Component -->
+  <AppComponent1 />
+
 
 </template>
 

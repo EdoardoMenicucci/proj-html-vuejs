@@ -102,7 +102,7 @@ export default {
 
             <a class="navbar-brand" href="#">Purchase</a>
 
-            <button class="button">VIEW COURSES</button>
+            <button class="button ms-3">VIEW COURSES</button>
 
           </div>
         </nav>
@@ -115,11 +115,11 @@ export default {
       <p>{{ jumboDesc }}</p>
       <div>
         <button class="button round-font"><i class="fa-solid fa-magnifying-glass"></i> Search courses</button>
-        <button class="button-white round-font">Apply for university</button>
+        <button class="button-white round-font ms-4">Apply for university</button>
       </div>
     </div>
   </div>
-  <div class=" bg-red">
+  <div class="bg-red">
     <img class="wave" :src="wave" alt="">
   </div>
 
@@ -128,10 +128,11 @@ export default {
 <!-- CON SCOPED DICHIARO CSS SOLO AL ATTUALE COMPONENTE/file -->
 <style scoped>
 /* STILE */
+
+
 * {
   font-size: 1.2rem;
 }
-
 
 .container-header {
   height: 40rem;
@@ -152,10 +153,13 @@ h1 {
   font-size: 4rem;
 }
 
+.bg-red {
+  background-color: #DE6F70;
+}
+
 .button {
   padding: 16px 43px !important;
   background-color: #e9d758;
-  margin-left: 20px;
   color: #fff;
   border-radius: 32px;
   border: transparent;
@@ -166,7 +170,6 @@ h1 {
 .button-white {
   padding: 16px 43px !important;
   background-color: transparent;
-  margin-left: 20px;
   color: #fff;
   border-radius: 32px;
   border: 1px solid white;
@@ -177,7 +180,6 @@ h1 {
 .button-white:hover {
   padding: 16px 43px !important;
   background-color: #e9d758;
-  margin-left: 20px;
   color: #fff;
   border-radius: 32px;
   border: transparent;
@@ -187,7 +189,6 @@ h1 {
 .button:hover {
   padding: 16px 43px !important;
   background-color: transparent;
-  margin-left: 20px;
   color: #fff;
   border-radius: 32px;
   border: 1px solid white;
