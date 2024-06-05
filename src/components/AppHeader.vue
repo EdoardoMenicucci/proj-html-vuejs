@@ -9,11 +9,11 @@ export default {
       jumboDesc: 'EduPrime is the most versatile WordPress theme for educational purposes, showcasing universities, courses, secondary schools etc.',
       wave: '/img/Wave-1.png',
       links: [
-        { name: 'Home', actions: ['action', 'another action', 'Something else here'] },
-        { name: 'Courses', actions: ['action', 'another action', 'Something else here'] },
+        { name: 'Home', actions: ['Action', 'Another action', 'Something else here'] },
+        { name: 'Courses', actions: ['Action', 'Another action', 'Something else here'] },
         { name: 'About Us', actions: null },
-        { name: 'News', actions: ['action', 'another action', 'Something else here'] },
-        { name: 'Pages', actions: ['action', 'another action', 'Something else here'] },
+        { name: 'News', actions: ['Action', 'Another action', 'Something else here'] },
+        { name: 'Pages', actions: ['Action', 'Another action', 'Something else here'] },
         { name: 'Contact', actions: null },
         { name: 'Purchase', actions: null },
       ]
@@ -66,13 +66,15 @@ export default {
       </div>
     </header>
     <!-- FINE NAVBAR -->
-    <!-- INIZIO JUMBOTRON -->
-    <div class="jumbo d-flex flex-columns align-items-center ">
-      <h1 class="round-font pb-5 pt-5">Showcase your courses</h1>
-      <p>{{ jumboDesc }}</p>
-      <div>
-        <button class="button round-font"><i class="fa-solid fa-magnifying-glass"></i> Search courses</button>
-        <button class="button-white round-font ms-4">Apply for university</button>
+    <div class="container">
+      <!-- INIZIO JUMBOTRON -->
+      <div class="jumbo d-flex flex-columns align-items-center ">
+        <h1 class="round-font pb-5 pt-5">Showcase your courses</h1>
+        <p>{{ jumboDesc }}</p>
+        <div>
+          <button class="button round-font"><i class="fa-solid fa-magnifying-glass"></i> Search courses</button>
+          <button class="button-white round-font ms-4">Apply for university</button>
+        </div>
       </div>
     </div>
   </div>
@@ -86,6 +88,9 @@ export default {
 <style scoped>
 /* STILE */
 
+.container {
+  width: 1200px;
+}
 
 * {
   font-size: 1.2rem;
@@ -208,7 +213,7 @@ h1 {
 
 .jumbo {
   height: 100%;
-  width: 30%;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
