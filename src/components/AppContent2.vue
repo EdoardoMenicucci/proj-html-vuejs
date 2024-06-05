@@ -1,68 +1,42 @@
 <script>
+import storeDave from '../data/storeDave.js';
+
 export default {
   data() {
-
+    return {
+      storeDave,
+    }
   }
 }
 </script>
 
 <template>
-  <img class="svg-top" src="/public/img/svg/svg-0.svg" alt="" style="width: 100%;">
+  <div class="svg-cont"></div>
+
   <div class="background pb-5">
     <div class="myCont text-center">
-      <img class="mb-4 mt-4" src="/public/img/Clock-and-Bell.png" alt="" style="width: 60px;">
+      <img class="mb-4 mt-4" src="/img/Clock-and-Bell.png" alt="" style="width: 60px;">
       <h1 class="round-font">University year</h1>
-      <div class="row justify-content-around position-relative mt-5">
-        <div class="cardof first position-relative">
-          <h4 class="round-font">Demo Classes</h4>
-          <p>In the first week, students try to accommodate with the teaching style and choose their optional courses.
-          </p>
-        </div>
-        <div class="cardof second position-relative">
-          <h4 class="round-font">Demo Classes</h4>
-          <p>In the first week, students try to accommodate with the teaching style and choose their optional courses.
-          </p>
+      <div class="row position-relative mt-5">
+        <div v-for="info in storeDave.info" class="cardof first position-relative">
+          <h4 class="round-font">{{ info.title }}</h4>
+          <p>{{ info.paragraf }}</p>
         </div>
       </div>
-      <img src="/public/img/Timeline-Item.png" alt="">
-      <div class="row justify-content-around position-relative">
-        <div class="cardof therd position-relative">
-          <h4 class="round-font">Demo Classes</h4>
-          <p>In the first week, students try to accommodate with the teaching style and choose their optional courses.
-          </p>
-        </div>
-        <div class="cardof forth position-relative">
-          <h4 class="round-font">Demo Classes</h4>
-          <p>In the first week, students try to accommodate with the teaching style and choose their optional courses.
-          </p>
+      <img src="/img/Timeline-Item.png" alt="">
+      <div class="row position-relative">
+        <div v-for="info in storeDave.info" class="cardof therd position-relative">
+          <h4 class="round-font">{{ info.title }}</h4>
+          <p>{{ info.paragraf }}</p>
         </div>
       </div>
-      <img class="mt-4 mb-4" src="/public/img/upcoming-events-calendar-icon.png" alt="" style="width: 60px;">
+      <img class="mt-4 mb-4" src="/img/upcoming-events-calendar-icon.png" alt="" style="width: 60px;">
       <h1 class="round-font mb-5">Upcoming Events</h1>
       <div class="row justify-content-center gap-3">
-        <div class="card col-3 p-5 mb-5">
-          <h4 class="round-font">Coaching Session</h4>
-          <p class="lighter-color"><i class="fa-regular fa-calendar-days"></i> 20 May 21:30 PM</p>
-          <p class="lighter-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor[...]
-          </p>
-          <div class="btn-cont">
-            <button type="button" class="button round-font">+ Find more</button>
-          </div>
-        </div>
-        <div class="card col-3 p-5 mb-5">
-          <h4 class="round-font">Coaching Session</h4>
-          <p class="lighter-color"><i class="fa-regular fa-calendar-days"></i> 20 May 21:30 PM</p>
-          <p class="lighter-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor[...]
-          </p>
-          <div class="btn-cont">
-            <button type="button" class="button round-font">+ Find more</button>
-          </div>
-        </div>
-        <div class="card col-3 p-5 mb-5">
-          <h4 class="round-font">Coaching Session</h4>
-          <p class="lighter-color"><i class="fa-regular fa-calendar-days"></i> 20 May 21:30 PM</p>
-          <p class="lighter-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor[...]
-          </p>
+        <div v-for="x in storeDave.cards" class="card col-3 p-5 mb-5">
+          <h4 class="round-font">{{ x.title }}</h4>
+          <p class="lighter-color"><i class="fa-regular fa-calendar-days pe-1"></i>{{ x.date }}</p>
+          <p class="lighter-color">{{ x.paragraf }}</p>
           <div class="btn-cont">
             <button type="button" class="button round-font">+ Find more</button>
           </div>
@@ -71,12 +45,16 @@ export default {
       <button type="button" class="button-white">View all events</button>
     </div>
   </div>
-  <img class="svg" src="/public/img/svg/svg-1.svg" alt="">
+  <div class="svg-cont-down"></div>
 </template>
 
 <style scoped>
+.row {
+  gap: 4rem;
+}
+
 .myCont {
-  width: 1600px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -84,16 +62,21 @@ export default {
   background-color: #e56768;
 }
 
-.svg-top {
+.svg-cont {
   width: 100%;
-  transform: translateY(5px);
-  margin: 0;
+  background-image: url('/img/svg/svg-0.svg');
+  height: 159px;
+  background-size: cover;
+  transform: translateY(1px);
+
 }
 
-.svg {
+.svg-cont-down {
   width: 100%;
-  transform: translateY(-5px);
-  margin: 0;
+  background-image: url('/img/svg/svg-1.svg');
+  height: 159px;
+  background-size: cover;
+  transform: translateY(-1px);
 }
 
 h1 {
@@ -136,7 +119,7 @@ h1 {
   border-radius: 32px;
   font-weight: 600;
   transition: 0.3s ease;
-  box-shadow: 5px 5px 10px #222;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .button-white:hover {
@@ -157,7 +140,7 @@ h1 {
   font-weight: 600;
   transition: 0.3s ease;
   width: fit-content;
-  box-shadow: 5px 5px 10px #222;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .button:hover {
@@ -165,6 +148,6 @@ h1 {
 }
 
 .btn-cont {
-  transform: translateY(4rem);
+  transform: translateY(1rem);
 }
 </style>
