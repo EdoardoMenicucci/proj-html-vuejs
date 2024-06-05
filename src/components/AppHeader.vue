@@ -30,8 +30,7 @@ export default {
 
 <template>
   <!-- TEMPLATE html-->
-  <div class="gradient-header"></div>
-  <div class="container-header">
+  <div class="container-header position-relative">
     <!-- SEZIONE HEADER -->
     <header class="p-4 d-flex justify-content-between align-items-center round-font">
       <div>
@@ -63,6 +62,7 @@ export default {
 
           </div>
         </nav>
+        <div class="gradient-header"></div>
       </div>
     </header>
     <!-- FINE NAVBAR -->
@@ -92,10 +92,10 @@ export default {
 }
 
 .gradient-header {
-  height: 40rem;
+  height: 12rem;
   width: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   background: rgb(2, 0, 36);
   background: linear-gradient(180deg, rgba(2, 0, 36, 0) 78%, rgba(209, 94, 94, 1) 98%);
