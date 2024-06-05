@@ -162,7 +162,7 @@ h1 {
   background-color: #e9d758;
   color: #fff;
   border-radius: 32px;
-  border: transparent;
+  border: 1px solid transparent;
   font-weight: 600;
   transition: 0.3s ease;
 }
@@ -182,7 +182,7 @@ h1 {
   background-color: #e9d758;
   color: #fff;
   border-radius: 32px;
-  border: transparent;
+  border: 1px solid transparent;
   font-weight: 600;
 }
 

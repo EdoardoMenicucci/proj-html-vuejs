@@ -110,7 +110,7 @@ p {
   margin-left: 20px;
   color: #fff;
   border-radius: 32px;
-  border: transparent;
+  border: 1px solid transparent;
   font-weight: 600;
   transition: 0.3s ease;
 }
@@ -132,7 +132,7 @@ p {
   margin-left: 20px;
   color: #fff;
   border-radius: 32px;
-  border: transparent;
+  border: 1px solid transparent;
   font-weight: 600;
 }
 
@@ -149,6 +149,6 @@ p {
 
 .btn {
   background-color: rgba(0, 0, 0, 0);
-  border: transparent;
+  border: 1px solid transparent;
 }
 </style>
