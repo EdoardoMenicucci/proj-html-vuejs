@@ -8,7 +8,6 @@ export default {
       bgHeader: 'img/hero.png',
       jumboDesc: 'EduPrime is the most versatile WordPress theme for educational purposes, showcasing universities, courses, secondary schools etc.',
       wave: '/img/Wave-1.png'
-
     }
   },
   methods: {
@@ -22,6 +21,7 @@ export default {
 
 <template>
   <!-- TEMPLATE html-->
+  <div class="gradient-header"></div>
   <div class="container-header">
     <!-- SEZIONE HEADER -->
     <header class="p-4 d-flex justify-content-between align-items-center round-font">
@@ -134,6 +134,16 @@ export default {
   font-size: 1.2rem;
 }
 
+.gradient-header {
+  height: 40rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 78%, rgba(209, 94, 94, 1) 98%);
+}
+
 .container-header {
   height: 40rem;
   background-image: url(../../img/hero.png);
@@ -149,12 +159,16 @@ button {
   font-size: 1.2rem !important;
 }
 
+button:hover {
+  color: #e9d758;
+}
+
 h1 {
   font-size: 4rem;
 }
 
 .bg-red {
-  background-color: #DE6F70;
+  background-color: #d15e5e;
 }
 
 .button {
