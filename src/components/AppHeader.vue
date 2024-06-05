@@ -7,7 +7,16 @@ export default {
       logo: 'img/theme_eduprime_logo.png',
       bgHeader: 'img/hero.png',
       jumboDesc: 'EduPrime is the most versatile WordPress theme for educational purposes, showcasing universities, courses, secondary schools etc.',
-      wave: '/img/Wave-1.png'
+      wave: '/img/Wave-1.png',
+      links: [
+        { name: 'Home', actions: ['action', 'another action', 'Something else here'] },
+        { name: 'Courses', actions: ['action', 'another action', 'Something else here'] },
+        { name: 'About Us', actions: null },
+        { name: 'News', actions: ['action', 'another action', 'Something else here'] },
+        { name: 'Pages', actions: ['action', 'another action', 'Something else here'] },
+        { name: 'Contact', actions: null },
+        { name: 'Purchase', actions: null },
+      ]
     }
   },
   methods: {
@@ -31,76 +40,24 @@ export default {
       <div class="left">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
-
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <button class="btn btn-dark dropdown-toggle round-font" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Home
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <button class="btn btn-dark dropdown-toggle round-font" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Courses
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <a class="navbar-brand" href="#">About Us</a>
-
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <button class="btn btn-dark dropdown-toggle round-font" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    News
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <button class="btn btn-dark dropdown-toggle round-font" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Pages
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <a class="navbar-brand" href="#">Contact</a>
-
-            <a class="navbar-brand" href="#">Purchase</a>
+            <!-- TEMPLATE PER CICLO DA DATA -->
+            <template v-for="element, i in links">
+              <div v-if="element.actions != null" class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <button class="btn  dropdown-toggle round-font" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ element.name }}
+                    </button>
+                    <!-- AD OGNI ELEMENTO CICLO NELLE ACTION PER STAMPARLE IN PAGINA NEL DROPDOWN -->
+                    <ul v-if="element.actions != null" class="dropdown-menu">
+                      <li v-for="elemento in element.actions"><a class="dropdown-item" href="#">{{ elemento }}</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- SE NON CONTIENE AZIONI NON CREO IL DROPDOWN -->
+              <a v-if="element.actions == null" class="navbar-brand" href="#">{{ element.name }}</a>
+            </template>
 
             <button class="button ms-3">VIEW COURSES</button>
 
@@ -157,11 +114,35 @@ export default {
 
 button {
   font-size: 1.2rem !important;
+  color: white;
 }
 
 button:hover {
   color: #e9d758;
 }
+
+a:hover {
+  color: #e9d758;
+}
+
+.dropdown a {
+  color: black;
+}
+
+
+/* MODIFICA DI BOOTSTRAP  ALL HOVER APPARE IL DROPDOWN COME NEL SITO ORIGINALE*/
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* DROPDOWN TRANSITION NON FUNZIONANTE */
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
 
 h1 {
   font-size: 4rem;
