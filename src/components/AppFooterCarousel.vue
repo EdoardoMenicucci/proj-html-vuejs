@@ -46,6 +46,10 @@ export default {
             let halfWay = (footerCarosell.scrollWidth - footerCarosell.clientWidth) / 2
             this.isAtLeft = true
         },
+        goLeft() {
+            const footerCarosell = document.getElementById('footerCarosell');
+            footerCarosell.scrollLeft -= (1500);
+        }
     },
     created() {
         setInterval(() => {
@@ -59,19 +63,19 @@ export default {
     },
 
     mounted() {
-
-        setInterval(() => {
-            const footerCarosell = document.getElementById('footerCarosell');
-            if (!this.onHover) {
-                if (this.isAtLeft) {
-                    footerCarosell.scrollLeft += 1500;
-                    this.isAtLeft = false;
-                } else {
-                    footerCarosell.scrollLeft -= 1500;
-                    this.isAtLeft = true;
+        this.goLeft,
+            setInterval(() => {
+                const footerCarosell = document.getElementById('footerCarosell');
+                if (!this.onHover) {
+                    if (this.isAtLeft) {
+                        footerCarosell.scrollLeft += 1500;
+                        this.isAtLeft = false;
+                    } else {
+                        footerCarosell.scrollLeft -= 1500;
+                        this.isAtLeft = true;
+                    }
                 }
-            }
-        }, 6000)
+            }, 6000)
     }
 }
 </script>
