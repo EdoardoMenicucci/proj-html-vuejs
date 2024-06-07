@@ -148,7 +148,7 @@ h1 {
 #container {
     width: 100%;
     justify-content: center;
-    background-image: url(img/background-wave3.png);
+    background-image: url('/img/background-wave3.png');
     background-color: #F7F8FA;
     /* background-color: #1a2f5a; */
     background-size: cover;

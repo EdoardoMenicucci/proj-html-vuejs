@@ -101,6 +101,7 @@ input {
     border-radius: 30px;
     padding: 1rem;
     width: 100%;
+    outline: transparent;
 }
 
 .fa-magnifying-glass {
