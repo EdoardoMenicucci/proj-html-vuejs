@@ -16,11 +16,20 @@ export default {
         { name: 'Pages', actions: ['Action', 'Another action', 'Something else here'] },
         { name: 'Contact', actions: null },
         { name: 'Purchase', actions: null },
-      ]
+      ],
+      hoverLinks: false,
+      time: 700,
     }
   },
   methods: {
-
+    hover() {
+      setTimeout(() => {
+        this.hoverLinks = true
+      }, this.time)
+    },
+    left() {
+      this.hoverLinks = false
+    }
   },
   mounted() {
 
@@ -43,12 +52,12 @@ export default {
             <template v-for="element, i in links">
               <div v-if="element.actions != null" class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown" @mouseover="hover" @mouseleave="left">
                     <button class="btn  dropdown-toggle round-font" data-bs-toggle="dropdown" aria-expanded="false">
                       {{ element.name }}
                     </button>
                     <!-- AD OGNI ELEMENTO CICLO NELLE ACTION PER STAMPARLE IN PAGINA NEL DROPDOWN -->
-                    <ul v-if="element.actions != null" class="dropdown-menu">
+                    <ul v-if="element.actions != null" class="dropdown-menu" :class="{ opacity: hoverLinks == true }">
                       <li v-for="elemento in element.actions"><a class="dropdown-item" href="#">{{ elemento }}</a></li>
                     </ul>
                   </li>
@@ -139,13 +148,18 @@ a:hover {
 .dropdown-menu {
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: 0.5s ease;
 }
 
 /* DROPDOWN TRANSITION NON FUNZIONANTE */
 .nav-item:hover .dropdown-menu {
   display: block;
-  opacity: 1;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+
+.opacity {
+  opacity: 1 !important;
 }
 
 
