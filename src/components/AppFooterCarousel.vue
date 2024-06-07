@@ -163,6 +163,7 @@ h1 {
     transition: 2s ease;
     caret-color: transparent;
     padding: 1rem 0;
+    user-select: none;
     /* scroll-snap-type: x mandatory; */
     /* padding-right: 0rem; */
 }

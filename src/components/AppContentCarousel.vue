@@ -161,6 +161,7 @@ p {
     margin: 0 2rem;
     /* QUA DOVREBBE ANDARE IL SCROLL SNAP */
     scroll-snap-type: x mandatory;
+    user-select: none;
 
 }
 
